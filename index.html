@@ -94,7 +94,10 @@
     <center>
         
 
-        <button id="scrollToBottom" class="btn-custom">Inscreva-se!</button></center>
+        <button id="scrollToBottom" class="btn-custom" onclick="window.location.href='https://fariasd3v.github.io/inscricao.html';">
+    Inscreva-se!
+</button>
+
 
     <br><h3><p class="lead text-center"><b>Prepare-se para o futuro da internet no TechFuture Summit Salvador 2025!<br></p></b>
     <b>O principal encontro de mentes inovadoras no coração da Bahia!<br></b>
@@ -103,14 +106,15 @@
 
     <p><strong>Local:</strong> Centro Universitário Jorge Amado - UNIJORGE – Salvador, Bahia<br><br>
 
-    <p class="text-center mb-4">Sobre o Evento</p> 
+    <p class="text-center mb-4"><strong>Sobre o Evento</strong></p> 
     <h2>TechFuture Summit é um evento sobre tecnologia front-end, com palestras, workshops e networking!<br>Abordando temas como design responsivo, frameworks modernos e UX/UI,
     <br>O evento reúne especialistas e entusiastas para explorar tendências e soluções inovadoras. Uma oportunidade única para aprendizado e conexões profissionais.</h2>
     </section>
     <hr style="border: 2px solid white;">
     <!--SEÇÃO DOS PALESTRANTES NOME//  FOTO // BIOGRAFIA -->
+            <h1 class="text-center py bg purple text-white">Palestrantes</h1></p>
+
     <section class="container">
-        <p class="text-center mb-5">Palestrantes</p>
         <div class="row justify-content-center"> <!-- Alinhamento centralizado -->
             
             <div class="col-md-4 text-center"> <!-- div para cada palestrante separadamente -->
@@ -134,91 +138,6 @@
         </div>
     </section>
 
-    <!--TIPO DE INGRESSO-->
-
-    <div class="container text-center">
-            <h2><b>Inscreva-se!</b></h2> <br><br>
-            <div class="container mt-4">
-        <h4 class="mb-3">Selecione o tipo de ingresso:</h4> <!-- Adicionado espaçamento abaixo -->
-        
-        <div class="d-flex flex-column align-items-center">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="tipo_ingresso" id="presencial" value="Presencial" checked>
-                <label class="form-check-label" for="presencial">Presencial</label>
-            </div>
-
-            <div class="form-check mt-2">
-                <input class="form-check-input" type="radio" name="tipo_ingresso" id="online" value="Online">
-                <label class="form-check-label" for="online">Online</label>
-            </div>
-        </div>
-    </div>
-
-        </div>
-        <center> 
-            
-            <!--FORMULARIO USANDO API DA SHEET MONKEY-->
-            <form id="meuFormulario" action="https://api.sheetmonkey.io/form/omUZ3jwaJ6Kvcs3uwEKThM" method="POST">
-                <label>Nome</label>
-                <input type="text" name="nome" required placeholder="Seu Nome"> <br><br>
-
-                <label>CPF</label>
-                <input type="tel" name="cpf" maxlength="11" required placeholder="Seu CPF"> <br><br>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1">E-mail</label>
-                    <input type="email" id="email" name="email" required><br>
-                    <small id="email" class="form-text text-muted">Não compartilharemos suas informações pessoais.</small>
-                </div>
-    <br>
-
-        
-
-        
-
-                </div> <br>
-
-                <fieldset style="max-width: 400px; border: 1px solid #ccc; padding: 10px;">
-                    <legend>Termos e Condições</legend>
-                    <ul>
-                        
-                        <li>A programação pode sofrer alterações sem aviso prévio.</li>
-                        <li>Presença poderá ser registrada para certificação.</li>
-                        <li>O uso de imagem em fotos e gravações está autorizado.</li>
-                        <li>Seus dados serão usados apenas para fins organizacionais.</li>
-                    </ul>
-                </fieldset><br>
-                    <!--  CHECKBOX DOS TERMOS E CONDIÇÕES-->
-
-                <input type="checkbox" id="termos" name="termos" value="aceito" required>
-                <label for="termos">Li e aceito os termos e condições do evento.</label><br><br>
-                <!--BOTAO DE FINALIZAR-->
-                <button type="submit" class="btn btn-lg btn-dark btn-block">Finalizar</button>
-            </form>
-            <!--MENSAGEM DE CONFIRMAÇÃO APÓS FINALIZAR-->
-            <div id="mensagemConfirmacao" style="display: none; color: green; font-weight: bold;">
-                ✅ Inscrição Confirmada!
-                </center>
-
-            </div>
-        </div>
-        <script>
-            /* script pra enviar o formulario e fazer a validação */
-
-            document.getElementById("meuFormulario").addEventListener("submit", function(event) {
-                event.preventDefault(); // Impede o envio tradicional
-                document.getElementById("mensagemConfirmacao").style.display = "block"; // Exibe mensagem
-                setTimeout(() => { this.submit(); }, 5000); // Envia após 2 segundos
-            });
-        </script>
-        
-        
-        <script>
-            /* SCRIPT PARA DESCER A PAGINA ATÉ O FORMULARIO DE INSCRIÇÃO */
-
-        document.getElementById("scrollToBottom").addEventListener("click", function() {
-            window.scrollTo({ top   : document.body.scrollHeight, behavior: "smooth" });
-        });
-    </script>
+  
     </body>
     </html> 
