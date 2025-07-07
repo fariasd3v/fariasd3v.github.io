@@ -1,0 +1,201 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  header {
+    background: #000;
+    padding: 15px 0;
+  }
+  
+  .barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    height: 180px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #00bfff;
+  }
+  
+  /* conteudo principal da pagina */
+  .inicio {
+    padding: 80px 0;
+  }
+  
+  .conteudo-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .texto-inicio {
+    max-width: 550px;
+  }
+  
+  .texto-inicio h1 {
+    font-size: 2.5rem;
+    color: #00bfff;
+    margin-bottom: 20px;
+  }
+  
+  .texto-inicio p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .imagem-inicio img {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  /* secao de ajuda */
+  .ajuda {
+    padding: 60px 0;
+  }
+  
+  .conteudo-ajuda {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .imagem-ajuda img {
+    width: 380px;
+    max-width: 100%;
+  }
+  
+  .texto-ajuda {
+    max-width: 600px;
+  }
+  
+  .texto-ajuda h2 {
+    color: #00bfff;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+  }
+  
+  .texto-ajuda ul {
+    list-style: none;
+  }
+  
+  .texto-ajuda ul li {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .texto-ajuda ul li i {
+    color: #00bfff;
+    margin-right: 10px;
+    font-size: 1.3rem;
+  }
+  
+  /* nossos serviços */
+  .servicos {
+    padding: 60px 0;
+  }
+  
+  .servicos h2 {
+    text-align: center;
+    color: #00bfff;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+  
+  .cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .cartao {
+    background: #222;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s;
+    border-radius: 0;
+  }
+  
+  .cartao:hover {
+    background: #00bfff;
+    color: #000000;
+  }
+  
+  .cartao h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* sobre da pagina */
+  .sobre {
+    padding: 60px 0;
+  }
+  
+  .sobre h2 {
+    color: #00bfff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .sobre p {
+    max-width: 900px;
+    font-size: 1.3rem;
+  }
+  
+  /* CONTATO */
+  .contato {
+    padding: 60px 0;
+  }
+  
+  .contato h2 {
+    color: #00bfff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .contato p a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  
+  .contato p a:hover {
+    text-decoration: underline;
+  }
