@@ -23,11 +23,11 @@ main {
   border-radius: 15px;
 
   /* Efeito de Vidro (Glassmorphism) */
-  background-color: rgba(61, 64, 91, 0.7); /* Cor personalizada com transparência recomendada */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  background-color: rgba(61, 64, 91, 0.45); /* Opacidade reduzida para vidro mais translúcido */
+  backdrop-filter: blur(12px);              /* Desfoque mais suave para maior elegância */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borda mais sutil */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25); /* Sombra mais suave */
 
   color: white;
 }
