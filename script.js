@@ -92,8 +92,20 @@ function iniciarCalculo() {
 
 // CÓDIGO QUE ASSOCIA A FUNÇÃO AO BOTÃO QUANDO A PÁGINA TERMINAR DE CARREGAR
 document.addEventListener("DOMContentLoaded", function () {
-    const botao = document.getElementById("iniciarCalculoBtn");
+    const botao = document.querySelector("button.btn.btn-outline-light");
     if (botao) {
         botao.addEventListener("click", iniciarCalculo);
+    }
+
+    const btnGuia = document.getElementById("btnGuia");
+    if (btnGuia) {
+        btnGuia.addEventListener("click", function () {
+            const guiaTexto = document.getElementById("guiaTexto");
+            if (guiaTexto.style.display === "none") {
+                guiaTexto.style.display = "block";
+            } else {
+                guiaTexto.style.display = "none";
+            }
+        });
     }
 });
