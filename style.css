@@ -23,7 +23,7 @@ main {
     border-radius: 15px; 
     
     /* Efeito de Vidro (Glassmorphism) */
-    background-color: #03045E; /* Cor substituída conforme solicitado */
+    background-color: rgba(61, 64, 91, 0.7); /* Cor personalizada com transparência recomendada */
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px); 
     border: 1px solid rgba(255, 255, 255, 0.18); 
