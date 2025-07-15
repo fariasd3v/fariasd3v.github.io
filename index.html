@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio da Sprint</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="" />
+    <style>
+
+        /* --- Importação da fonte Inter Tight do Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap');
+/* --- Fim da Importação --- */
+
+body {
+  /* Aplica a fonte Inter Tight a todo o corpo do documento */
+  font-family: 'Inter Tight', sans-serif;
+
+  background-image: url('./teste/foto.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+main {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.container {
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 15px;
+
+  /* Efeito de Vidro (Glassmorphism) */
+  background-color: rgba(20, 30, 50, 0.3); /* azul escuro translúcido */
+  backdrop-filter: blur(12px);              /* Desfoque suave para maior elegância */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borda sutil */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25); /* Sombra suave */
+
+  color: white;
+}
+
+.btn-outline-light {
+  font-weight: bold;
+  padding: 10px 30px;
+  border-width: 2px;
+}
+
+h1, h2 {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+}
+    </style>
+  </head>
+
+  <body>
+    <main class="d-flex justify-content-center align-items-center min-vh-100">
+      <div class="container text-center">
+
+        <h1>Desafio da Sprint</h1>
+
+        <!-- Texto do Guia (oculto por padrão) -->
+        <div id="guiaTexto" style="display: none; background-color: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; color: white; text-align: left; margin-bottom: 15px;">
+          <p><strong>Como utilizar o sistema:</strong></p>
+          <ul>
+            <li>Preencha todos os campos obrigatórios corretamente.</li>
+            <li>Clique no botão <strong>Calcular</strong> para obter os resultados.</li>
+            <li>Somente números são permitidos — evite letras e caracteres especiais.</li>
+            <li>Você pode cadastrar até 10 postos diferentes.</li>
+          </ul>
+        </div>
+
+        <!-- Botão Guia de Uso -->
+        <div style="margin-bottom: 15px;">
+          <button id="btnGuia" type="button" class="btn btn-outline-light">Guia de Uso</button>
+        </div>
+
+        <!-- Botão Calcular -->
+        <button id="iniciarCalculoBtn" type="button" class="btn btn-outline-light">Calcular</button>
+
+        <!-- Saída dos resultados -->
+        <div id="saidainner" class="mt-4 text-light"></div>
+
+      </div>
+    </main>
+
+    <!-- JavaScript externo -->
+    <script>
+
+        //FUNÇÃO QUEBRA DE TEXTO
+//function quebraDeLinha() {
+//  return <br />;
+
+// FUNÇÃO QUE RETORNA O VALOR DO CALCULO DE CONSUMO DISTANCIA / CONSUMO MÉDIO 
+function calculoConsumo(distancia, consumo) {
+    return distancia / consumo;
+}
+
+// Funções auxiliares para validar entrada numérica
+function validarNumeroFloat(entrada) {
+    return /^[0-9]+([,\.][0-9]+)?$/.test(entrada);  // Alterado para permitir vírgula e ponto
+}
+
+function validarNumeroInteiro(entrada) {
+    return /^[0-9]+$/.test(entrada);
+}
+
+// FUNÇÃO PRINCIPAL DISPARADA PELO BOTÃO
+function iniciarCalculo() {
+    // LÊ O VALOR DO USUARIO E ARMAZENA EM distancia_percorrida // PARTE 1
+    // função parseFloat para que seja lida uma entrada  em valor flutuante
+    let input = prompt('Qual a distancia percorrida da sua casa até seu trabalho (em KM)?');
+    while (!validarNumeroFloat(input) || isNaN(parseFloat(input)) || parseFloat(input) <= 0) {
+        input = prompt('Valor inválido! Digite a distância em KM (ex: 12.5):');
+    }
+    let distancia_Percorrida = parseFloat(input);
+    //alert(`Perfeito, então a distância percorrida é de:${distancia_Percorrida}`);
+
+    // LÊ O VALOR DO USUARIO E ARMAZENA EM consumo_medio  //  PARTE 2 
+    // função parseFloat para que seja lida uma entrada  em valor flutuante
+    input = prompt('Qual o consumo médio do seu veiculo?');
+    while (!validarNumeroFloat(input) || isNaN(parseFloat(input)) || parseFloat(input) <= 0) {
+        input = prompt('Valor inválido! Digite o consumo médio (ex: 10.2):');
+    }
+    let consumo_Medio = parseFloat(input);
+    //alert(`Ótimo! Então o consumo médio do seu carro é de:${consumo_Medio}`);
+
+    let calculoCs = calculoConsumo(distancia_Percorrida, consumo_Medio);
+    //alert(`O consumo é de:${calculoCs} litros!`);
+
+    // função parseInt para que seja lida uma entrada  em valor Inteiro // PARTE 3 
+    input = prompt('Em quantos postos você pesquisou?');
+    while (!validarNumeroInteiro(input) || isNaN(parseInt(input)) || parseInt(input) <= 0 || parseInt(input) > 10) {
+        input = prompt('Valor inválido! Digite um número inteiro positivo (máximo de 10):');
+    }
+    let quantidade_Postos_Pesquisados = parseInt(input);
+    //alert(`Certo! O numero de postos consultados foi de:${quantidade_Postos_Pesquisados},certo?`);
+
+    // ARRAY VAZIO SEM VALOR DEFINIDO -- RECEBE O TAMANHO DE ACORDO COM O PROMPT DO USUARIO, AS REPETICOES IGUALAM
+    let postos = [];
+    for (let i = 0; i < quantidade_Postos_Pesquisados; i++) {
+        input = prompt('Digite o valor encontrado no posto: ' + (i + 1));
+
+        // Substitui ponto por vírgula ao digitar
+        input = input.replace('.', ',');
+
+        // Valida a entrada e converte
+        while (!validarNumeroFloat(input) || isNaN(parseFloat(input.replace(',', '.'))) || parseFloat(input.replace(',', '.')) <= 0) {
+            input = prompt('Valor inválido! Digite novamente o valor do posto ' + (i + 1) + ':');
+            
+            // Substitui ponto por vírgula se necessário
+            input = input.replace('.', ',');
+        }
+
+        // Converte o valor de volta para ponto antes de fazer o cálculo
+        postos[i] = parseFloat(input.replace(',', '.'));
+    }
+
+    // LAÇO SEPARADO PARA VERIFICAR O MENOR VALOR DIGITADO E COMPARAR SE O INDICE 0 AINDA É MENOR, HERDANDO
+    let menorValor = postos[0];
+    for (let index = 1; index < postos.length; index++) {
+        if (postos[index] < menorValor) {
+            menorValor = postos[index];
+        }
+    }
+    //alert("O menor valor encontrado foi: " + menorValor);
+
+    let somaTotal = 0;
+    for (let i = 0; i < postos.length; i++) {
+        somaTotal = somaTotal + postos[i];
+    }
+
+    let media = somaTotal / quantidade_Postos_Pesquisados;
+    let gasto_Diario = 2 * (calculoCs * menorValor);
+
+    // MANIPULAÇÃO DO ELEMENTO PELO JAVASCRIPT ONDE MENSAGEM RECEBE TODOS ESSES VALORES NO HTML
+    let resultado = document.getElementById("saidainner");
+
+    let mensagem = "";
+    mensagem += "Consumo médio: " + consumo_Medio + " km/l<br>";
+    mensagem += "Soma total dos preços: R$ " + somaTotal.toFixed(2) + "<br>";
+    mensagem += "Distância percorrida: " + distancia_Percorrida + " km<br>";
+    mensagem += "Consumo calculado: " + calculoCs.toFixed(2) + " litros<br>";
+    mensagem += "Média dos preços: R$ " + media.toFixed(2) + "<br>";
+    mensagem += "Menor valor dos postos: R$ " + menorValor.toFixed(2) + "<br>";
+    mensagem += "Gasto diário (ida e volta) R$ " + gasto_Diario.toFixed(2) + "<br>";
+    // QUANTIDADE DE POSTOS É UM INTEIRO POR ISSO NAO TEM FIXED, QUE É PRA NUMEROS FLOAT
+    mensagem += "Número total de postos pesquisados:" + quantidade_Postos_Pesquisados + "<br>";
+    resultado.innerHTML = mensagem;
+}
+
+// CÓDIGO QUE ASSOCIA A FUNÇÃO AO BOTÃO QUANDO A PÁGINA TERMINAR DE CARREGAR
+document.addEventListener("DOMContentLoaded", function () {
+    const botao = document.getElementById("iniciarCalculoBtn");
+    if (botao) {
+        botao.addEventListener("click", iniciarCalculo);
+    }
+
+    const btnGuia = document.getElementById("btnGuia");
+    if (btnGuia) {
+        btnGuia.addEventListener("click", function (event) {
+            event.preventDefault(); // evita qualquer comportamento padrão inesperado
+            const guiaTexto = document.getElementById("guiaTexto");
+            if (guiaTexto.style.display === "none") {
+                guiaTexto.style.display = "block";
+            } else {
+                guiaTexto.style.display = "none";
+            }
+        });
+    }
+});
+    </script>
+  </body>
+</html>
