@@ -3,43 +3,42 @@
 /* --- Fim da Importação --- */
 
 body {
-    /* Aplica a fonte Inter Tight a todo o corpo do documento */
-    font-family: 'Inter Tight', sans-serif;
-    
-    background-image: url('https://i.imgur.com/OLWvOT3.png'); 
-    background-size: cover; 
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  /* Aplica a fonte Inter Tight a todo o corpo do documento */
+  font-family: 'Inter Tight', sans-serif;
+
+  background-image: url('https://i.imgur.com/OLWvOT3.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 main {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .container {
-    max-width: 500px; 
-    padding: 25px; 
-    border-radius: 15px; 
-    
-    /* Efeito de Vidro (Glassmorphism) */
-    background-color: rgba(61, 64, 91, 0.7); /* Cor personalizada com transparência recomendada */
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.18); 
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
-    
-    color: white; 
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 15px;
+
+  /* Efeito de Vidro (Glassmorphism) */
+  background-color: rgba(61, 64, 91, 0.7); /* Cor personalizada com transparência recomendada */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  color: white;
 }
 
 .btn-outline-light {
-    font-weight: bold;
-    padding: 10px 30px;
-    border-width: 2px;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-width: 2px;
 }
 
-/* Opcional: Para o cabeçalho, se quiser um peso diferente, por exemplo */
 h1, h2 {
-    font-family: 'Inter Tight', sans-serif; /* Garante que os cabeçalhos também usem a fonte */
-    font-weight: 700; /* Define um peso de fonte mais "encorpado" para os cabeçalhos */
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
 }
