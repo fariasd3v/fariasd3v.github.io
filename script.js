@@ -89,3 +89,11 @@ function iniciarCalculo() {
     mensagem += "Número total de postos pesquisados:" + quantidade_Postos_Pesquisados + "<br>";
     resultado.innerHTML = mensagem;
 }
+
+// CÓDIGO QUE ASSOCIA A FUNÇÃO AO BOTÃO QUANDO A PÁGINA TERMINAR DE CARREGAR
+document.addEventListener("DOMContentLoaded", function () {
+    const botao = document.getElementById("iniciarCalculoBtn");
+    if (botao) {
+        botao.addEventListener("click", iniciarCalculo);
+    }
+});
