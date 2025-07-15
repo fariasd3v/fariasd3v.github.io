@@ -92,14 +92,15 @@ function iniciarCalculo() {
 
 // CÓDIGO QUE ASSOCIA A FUNÇÃO AO BOTÃO QUANDO A PÁGINA TERMINAR DE CARREGAR
 document.addEventListener("DOMContentLoaded", function () {
-    const botao = document.querySelector("button.btn.btn-outline-light");
+    const botao = document.getElementById("iniciarCalculoBtn");
     if (botao) {
         botao.addEventListener("click", iniciarCalculo);
     }
 
     const btnGuia = document.getElementById("btnGuia");
     if (btnGuia) {
-        btnGuia.addEventListener("click", function () {
+        btnGuia.addEventListener("click", function (event) {
+            event.preventDefault(); // evita qualquer comportamento padrão inesperado
             const guiaTexto = document.getElementById("guiaTexto");
             if (guiaTexto.style.display === "none") {
                 guiaTexto.style.display = "block";
